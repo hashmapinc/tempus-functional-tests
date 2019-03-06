@@ -1,0 +1,20 @@
+app:
+  environmentType: LOCAL
+  driverType: CHROME
+  windowMaximize: true
+  driverPath: /Users/chromedriver
+  implicitlyWait: 20
+  host: https://tempus.hashmapinc.com/
+  testDataResourcePath: src/test/resources/testDataResources/
+  #reportConfigPath: /Users/jayeshkapadnis/hashmap/tempus/TempusFunctionalTestApp/configs/extent-config.xml
+
+user:
+  tenant:
+    username: "${TEMPUS_TENANT_USERNAME:user@hashmapinc.com}"
+    password: "${TEMPUS_TENANT_PASSWORD:pwd}"
+  customer:
+    username: "${TEMPUS_CUSTOMER_USERNAME:user@hashmapinc.com}"
+    password: "${TEMPUS_CUSTOMER_PASSWORD:pwd}"
+  sysAdmin:
+    username: "${TEMPUS_SYS_ADMIN_USERNAME:user@hashmapinc.com}"
+    password: "${TEMPUS_SYS_ADMIN_PASSWORD:pwd}"
