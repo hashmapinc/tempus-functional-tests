@@ -40,7 +40,7 @@ public class LoginSteps implements En {
             assertThat(homePage.isHomePageFor(UserType.valueOf(userType))).isTrue();
         });
 
-        After(new String[]{"@logout"}, (Scenario scenario) -> loginPage.logout());
+        After(new String[]{"@logout"}, (Scenario scenario) -> homePage.logout());
 
         // login Error Scenario
         When("^I fill in incorrect \"([^\"]*)\" username$", (String username) -> {

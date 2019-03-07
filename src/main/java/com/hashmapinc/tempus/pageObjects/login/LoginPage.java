@@ -25,12 +25,6 @@ public class LoginPage extends Page {
     @FindBy(how = How.LINK_TEXT, using = "Login")
     private WebElement btn_login;
 
-    @FindBy(how = How.XPATH, using = "/html/body/ui-view/div/md-toolbar/div/tb-user-menu/section/md-menu/button/md-icon")
-    private WebElement menu_logout;
-
-    @FindBy(how = How.XPATH, using = "//*[@id=\"menu_container_0\"]/md-menu-content/md-menu-item[2]/button/span")
-    private WebElement btn_logout;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"toast-parent\"]/md-toast/div/div")
     private WebElement errTxt_login;
 
@@ -75,15 +69,6 @@ public class LoginPage extends Page {
     public void submitLogin(){
         inpTxt_password.submit();
         //driverWait(20).until(ExpectedConditions.titleContains(homePageTitle));
-    }
-
-    public void logout(){
-        wait.untilPageLoadComplete(getWebDriverManager().getDriver());
-        //driverWait(20).until(ExpectedConditions.visibilityOf(menu_logout));
-        menu_logout.click();
-        //driverWait(20).until(ExpectedConditions.visibilityOf(btn_logout));
-        btn_logout.click();
-        wait.untilPageLoadComplete(getWebDriverManager().getDriver());
     }
 
     public boolean validateIfLoginFailed(){

@@ -19,11 +19,27 @@ public class HomePage extends Page {
     @FindBy(how = How.XPATH, using = "/html/body/ui-view/div/md-toolbar/div/tb-user-menu/section/div/div/span[2]")
     private WebElement txt_userRole;
 
+    @FindBy(how = How.XPATH, using = "/html/body/ui-view/div/md-toolbar/div/tb-user-menu/section/md-menu/button/md-icon")
+    private WebElement menu_logout;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"menu_container_0\"]/md-menu-content/md-menu-item[2]/button/span")
+    private WebElement btn_logout;
+
+
     protected HomePage(WebDriverManager webDriverManager) {
         super(webDriverManager);
     }
 
     public boolean isHomePageFor(UserType userType) {
         return txt_userRole.getText().equals(userType.getRole());
+    }
+
+    public void logout(){
+        wait.untilPageLoadComplete(getWebDriverManager().getDriver());
+        //driverWait(20).until(ExpectedConditions.visibilityOf(menu_logout));
+        menu_logout.click();
+        //driverWait(20).until(ExpectedConditions.visibilityOf(btn_logout));
+        btn_logout.click();
+        wait.untilPageLoadComplete(getWebDriverManager().getDriver());
     }
 }
