@@ -1,5 +1,4 @@
 app:
-  environmentType: LOCAL
   driverType: CHROME
   windowMaximize: true
   driverPath: /Users/chromedriver
@@ -11,10 +10,10 @@ app:
 user:
   tenant:
     username: "${TEMPUS_TENANT_USERNAME:user@hashmapinc.com}"
-    password: "${TEMPUS_TENANT_PASSWORD:pwd}"
+    password: "${TEMPUS_TENANT_PASSWORD:test}"
   customer:
     username: "${TEMPUS_CUSTOMER_USERNAME:user@hashmapinc.com}"
-    password: "${TEMPUS_CUSTOMER_PASSWORD:pwd}"
+    password: "${TEMPUS_CUSTOMER_PASSWORD:test}"
   sysAdmin:
     username: "${TEMPUS_SYS_ADMIN_USERNAME:user@hashmapinc.com}"
-    password: "${TEMPUS_SYS_ADMIN_PASSWORD:pwd}"
+    password: "${TEMPUS_SYS_ADMIN_PASSWORD:test}"

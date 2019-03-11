@@ -3,7 +3,7 @@ Feature: Login as a Tempus User
   I want to able to login to Tempus,
   with a home page design for given user
 
-  @logout @SmokeTest @browser
+  @Logout @SmokeTest @Browser
   Scenario: Login with correct TENANT user credentials
     Given a web browser is on the Tempus login page
     And I am not logged on
@@ -13,7 +13,7 @@ Feature: Login as a Tempus User
     Then I should see Tempus home page for "TENANT"
 
 
-  @logout @SmokeTest @browser
+  @Logout @SmokeTest @Browser
   Scenario: Login with correct CUSTOMER user credentials
     Given a web browser is on the Tempus login page
     And I am not logged on
@@ -22,7 +22,7 @@ Feature: Login as a Tempus User
     And I hit enter for submit
     Then I should see Tempus home page for "CUSTOMER"
 
-  @logout @SmokeTest @browser
+  @Logout @SmokeTest @Browser
   Scenario: Login with correct SYSADMIN user credentials
     Given a web browser is on the Tempus login page
     And I am not logged on
@@ -31,7 +31,7 @@ Feature: Login as a Tempus User
     And I hit enter for submit
     Then I should see Tempus home page for "SYS_ADMIN"
 
-  @SmokeTest @browser
+  @SmokeTest @Browser
   Scenario: Login with incorrect user credentials
     Given a web browser is on the Tempus login page
     And I am not logged on

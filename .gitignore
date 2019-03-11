@@ -1,0 +1,8 @@
+*.class
+*.iml
+.idea/
+**/dependency-reduced-pom.xml
+**/target
+*/node_modules/
+*/node/
+*/dist/

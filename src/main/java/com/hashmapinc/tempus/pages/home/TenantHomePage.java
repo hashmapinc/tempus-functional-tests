@@ -1,4 +1,4 @@
-package com.hashmapinc.tempus.pageObjects.home;
+package com.hashmapinc.tempus.pages.home;
 
 import com.hashmapinc.tempus.managers.WebDriverManager;
 import org.springframework.stereotype.Component;

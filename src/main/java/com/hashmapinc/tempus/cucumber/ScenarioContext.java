@@ -3,28 +3,28 @@ package com.hashmapinc.tempus.cucumber;
 import com.hashmapinc.tempus.enums.Context;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 @Component
 public class ScenarioContext {
 
-    private  Map<String, Object> scenarioContext;
+    private  Map<Context, Object> scenarioContext;
 
     public ScenarioContext(){
-        scenarioContext = new HashMap<>();
+        scenarioContext = new EnumMap<>(Context.class);
     }
 
     public void setContext(Context key, Object value) {
-        scenarioContext.put(key.toString(), value);
+        scenarioContext.put(key, value);
     }
 
     public Object getContext(Context key){
-        return scenarioContext.get(key.toString());
+        return scenarioContext.get(key);
     }
 
-    public Boolean isContains(Context key){
-        return scenarioContext.containsKey(key.toString());
+    public Boolean contains(Context key){
+        return scenarioContext.containsKey(key);
     }
 
 }

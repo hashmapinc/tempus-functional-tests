@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 //This is to initialize spring context
 public class DefaultSteps extends SpringApplicationTest implements En {
+
     @Autowired
     private WebDriverManager webDriverManager;
-    @After("@browser")
+
+    @After("@Browser")
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
             System.out.println("Scenario failed");

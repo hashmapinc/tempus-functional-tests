@@ -1,16 +1,21 @@
-package com.hashmapinc.tempus.pageObjects.login;
+package com.hashmapinc.tempus.pages.login;
 
+import com.hashmapinc.tempus.config.UserConfig;
 import com.hashmapinc.tempus.enums.UserType;
 import com.hashmapinc.tempus.managers.WebDriverManager;
-import com.hashmapinc.tempus.pageObjects.Page;
+import com.hashmapinc.tempus.pages.Page;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class LoginPage extends Page {
+
+    @Autowired
+    protected UserConfig userConfig;
 
     private static final String TITLE = "Tempus | Login";
 
@@ -38,7 +43,7 @@ public class LoginPage extends Page {
     }
 
     public boolean isUserAlreadyLoggedIn(){
-        wait.untilPageLoadComplete(getWebDriverManager().getDriver());
+        waitForPageLoad();
         return !isPageWithTitle(TITLE);
     }
 

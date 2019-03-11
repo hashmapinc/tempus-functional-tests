@@ -1,14 +1,11 @@
-package com.hashmapinc.tempus.pageObjects.home;
+package com.hashmapinc.tempus.pages.home;
 
-import com.hashmapinc.tempus.config.AppConfig;
-import com.hashmapinc.tempus.config.UserConfig;
 import com.hashmapinc.tempus.enums.UserType;
 import com.hashmapinc.tempus.managers.WebDriverManager;
-import com.hashmapinc.tempus.pageObjects.Page;
+import com.hashmapinc.tempus.pages.Page;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -35,11 +32,11 @@ public class HomePage extends Page {
     }
 
     public void logout(){
-        wait.untilPageLoadComplete(getWebDriverManager().getDriver());
-        //driverWait(20).until(ExpectedConditions.visibilityOf(menu_logout));
+        waitForPageLoad();
+
         menu_logout.click();
-        //driverWait(20).until(ExpectedConditions.visibilityOf(btn_logout));
         btn_logout.click();
-        wait.untilPageLoadComplete(getWebDriverManager().getDriver());
+
+        waitForPageLoad();
     }
 }
