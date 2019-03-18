@@ -1,7 +1,7 @@
 app:
   driverType: CHROME
   windowMaximize: true
-  driverPath: /Users/chromedriver
+  driverPath: /usr/bin/chromedriver
   implicitlyWait: 20
   host: https://tempus.hashmapinc.com/
   testDataResourcePath: src/test/resources/testDataResources/
