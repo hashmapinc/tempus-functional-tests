@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'hashmapinc/tempusbuild:java-11'
+      image 'selenium/standalone-chrome'
       args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
