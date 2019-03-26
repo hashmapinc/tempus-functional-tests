@@ -9,7 +9,8 @@ pipeline {
     stage('Initialize') {
         steps {     
           sh '''mvn clean
-                mvn validate'''
+                mvn validate
+                mvn install'''
           }
       }
       stage('Test ') {
