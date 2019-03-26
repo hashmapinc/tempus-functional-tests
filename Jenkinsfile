@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'alpeware/chrome-headless-trunk'
+      image 'markhobson/maven-chrome'
       args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
