@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'hashmapinc/tempusbuild:func-test'
-      args '-u root -v /var/run/docker.sock:/var/run/docker.sock -v /dev/shm:/dev/shm'
+      args '-u root -v /var/run/docker.sock:/var/run/docker.sock --shm-size=8g'
     }
   }
   stages{
