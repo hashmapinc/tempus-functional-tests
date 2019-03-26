@@ -10,7 +10,7 @@ pipeline {
         steps {     
           sh '''mvn clean
                 mvn validate
-                mvn install -DskipTests'''
+                '''
           }
       }
       stage('Test ') {
