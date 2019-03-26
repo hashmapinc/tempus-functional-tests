@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'hashmapinc/tempusbuild:func-test'
+      image 'hashmapinc/tempusbuild:func-test-1'
       args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
@@ -9,8 +9,7 @@ pipeline {
     stage('Initialize') {
         steps {     
           sh '''mvn clean
-                mvn validate
-                mvn install'''
+                mvn validate'''
           }
       }
       stage('Test ') {
